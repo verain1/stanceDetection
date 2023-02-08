@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>CAPSTONE PROJECT</title>
+            <style>
+                
+                body{
+                    margin: 0;
+                    padding: 0;
+                    background: url(https://img.freepik.com/free-vector/flat-geometric-background_23-2148957201.jpg?w=1380&t=st=1669630980~exp=1669631580~hmac=129935ec993bf46f35db98c0df2ec361a37b732d17769f705fe4d1310a1037a1);
+                    background-size: cover;
+                    background-position: center;
+                    font-family: sans-serif;
+                }
+                
+                .loginBox{
+                    width: 320 px;
+                    height: 420 px;
+                    background: #000;
+                    color: #fff;
+                    top: 50%;
+                    left: 50%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    box-sizing: border-box;
+                    padding: 80px 25px;
+                    border-radius: 25px;
+                    border: 2px solid black;
+                }
+                
+                .avatar{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -110px;
+                    left: calc(50% - 50px);
+                }
+                
+                
+                h1{
+                    margin: 0;
+                    padding: 0 0 20px;
+                    text-align: center;
+                    font-size: 22px;
+                }
+                
+                .loginBox p{
+                    margin: 0;
+                    padding: 0;
+                    font-weight: bold;
+                }
+                
+                .loginBox input{
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                
+                .loginBox input[type="text"], input[type="password"]{
+                    border: none;
+                    border-bottom: 1px solid #fff;
+                    background: transparent;
+                    outline: none;
+                    height: 40px;
+                    color: #fff;
+                    font-size: 16px;
+                }
+                
+                .loginBox input[type = "submit"]{
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    background: #fb2525;
+                    color: #fff;
+                    font-size: 18px;
+                }
+                
+                .loginBox input[type = "submit"]:hover{
+                    cursor: pointer;
+                    background: #ffc107;
+                    color: #000;
+                }
+                
+                .loginBox a{
+                    text-decoration: none;
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: darkgray;
+                }
+                
+                .loginBox a:hover{
+                    color: #ffc107;
+                
+                }
+            </style>
+    </head>
+
+    <body>
+        <div class="loginBox">
+            <img src = "https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png" class = "avatar">
+                <h1>Login here</h1>
+                <form action="{{ url_for('login')}}" method="POST" autocomplete="off">
+                    <div class="msg">{{ msg }}</div>
+                    <p>Username: </p>
+                    <input type="text" name = "username" value="{{ login }}" placeholder="Enter Username">
+                    <p>Password: </p>
+                    <input type="password" name = "password" placeholder="Enter password">
+                    <input type="submit" value="Login">
+                    <p class="bottom">Don't have an account?  <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+                    
+                </form>
+        </div>
+    </body>
+</html>
